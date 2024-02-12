@@ -1,7 +1,7 @@
 clone the repo 
--cd repo
--npm install
--npm run dev
+- cd repo
+- npm install
+- npm run dev
 You are good to go
 
 Challenges: 
