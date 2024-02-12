@@ -1,8 +1,9 @@
-# React + Vite
+clone the repo 
+- cd repo
+- npm install
+- npm run dev
+You are good to go
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Challenges: 
+- The main challenge was to configure firestore and add in the react app, as i wasnt familiar it took me some time and searching to come along but eventually everything did work
+- what sets this project apart from others is the form input validation to check whether the input are of the correct ethereum address or not and also the error handling is precisely done so that every user can understand what they might have done wrong
