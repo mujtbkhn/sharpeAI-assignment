@@ -13,14 +13,19 @@ const Transaction = () => {
   const [success, setSuccess] = useState(false);
 
   const db = getFirestore();
+  
 
+  //Form Input Validation
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    //checking for correct ethereum wallet address
     if (!walletAddress || !isAddress(walletAddress)) {
-      // console.log(isAddress);
       setError("Please provide a valid Ethereum address");
       return;
     }
+
+    //checking for amount
     const parsedAmount = parseFloat(amount);
     if (isNaN(parsedAmount) || parsedAmount < 0 || parsedAmount > 10000) {
       setError("Please enter a valid amount between 0 and 10,000");
@@ -29,6 +34,8 @@ const Transaction = () => {
     const timestamp = new Date();
 
     try {
+
+      //sending the data to firestore database
       const docRef = await addDoc(collection(db, "transactions"), {
         walletAddress,
         amount: parsedAmount,
@@ -37,6 +44,8 @@ const Transaction = () => {
       console.log("Document written with ID: ", docRef.id);
       setSuccess(true);
       setError("");
+      setWalletAddress("");
+      setAmount("");
     } catch (error) {
       console.error("Error adding document: ", error);
       setError("An error occurred while processing your request");

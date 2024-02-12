@@ -10,6 +10,7 @@ const Data = () => {
     fetchData();
   }, []);
 
+  //Logic to fetch the data from firestore
   const fetchData = async () => {
     const db = getFirestore();
     const transactionCollection = collection(db, "transactions");
